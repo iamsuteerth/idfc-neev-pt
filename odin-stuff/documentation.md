@@ -198,7 +198,25 @@ There are some commits to the master branch and now we have to rewind stuff. Thi
     git status
     git log
     ```
-- Some more commands related to file modification.
+- Some more commands related to file modification. (Assuming you are in the odin directory)
     ```bash
-
+    code ../README.md
+    code ./hello_world.txt
+    cd ..
+    git add .
+    git commit -m "Modified README, added documentation.md and modified hw.txt"
+    git status
+    git log --oneline
+    git push origin main
     ```
+## Some Additional Information
+- The basic Git syntax is `program | action | destination`
+- `git add .` is read as `git | add | .`, where the period represents everything in the current directory.
+- `git commit -m "message"` is read as `git | commit -m | "message"`
+- Some best practices:
+    - Make atomic commits which means that your commits should be for one feature at a time.
+    - Leave useful and insightful commit messages and avoid things like `fixed something broken`
+    - Since we are normal people, use VSCode instead of Vim for editing commit messages. It can be done by:
+        ```
+        git config --global core.editor "code --wait"
+        ```
