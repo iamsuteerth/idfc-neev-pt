@@ -1,3 +1,4 @@
+# Git Basics
 # What is git?
 - System to record changes to the files over time.
 - Recall specific versions of those files at any given time.
