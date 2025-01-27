@@ -1,4 +1,4 @@
-package CardTricks
+package slices
 
 // FavoriteCards returns a slice with the cards 2, 6 and 9 in that order.
 func FavoriteCards() []int {
