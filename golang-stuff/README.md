@@ -31,3 +31,6 @@ These are exercises from [Exercism GoLang Mastery](https://exercism.org/tracks/g
 22. [Type Conversions and Assertions](/golang-stuff/typeconversionsandassertions/sortingroom.go)
 23. [Errors](/golang-stuff/errors/thefarm.go)
 24. [First Class Functions](/golang-stuff/firstclassfunctions/expenses.go)
+
+## Questions
+All the extra problem solving questions can be found [here](/golang-stuff/questions/)
