@@ -34,3 +34,6 @@ These are exercises from [Exercism GoLang Mastery](https://exercism.org/tracks/g
 
 ## Questions
 All the extra problem solving questions can be found [here](/golang-stuff/questions/)
+
+# Gin Framework
+All the content related to gin framework as part of this pre-reads week can be found [here](/golang-stuff/gin-pt/)
