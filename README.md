@@ -3,4 +3,5 @@ Contains all the pre training content from dev bootcamp. Each content has it's o
 - [Git Basics](/odin-stuff/README.md)
 - [Linux CLI](/ssh-commands/README.md)
 - [Docker Complete Guide](/docker-mastery/README.md)
-- [Golang Basics](/golang-stuff/README.md)
+- [Golang Basics](/golang-stuff)
+- [Javascript and CSS](/js-css-stuff)

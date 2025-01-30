@@ -2,11 +2,21 @@
  - using env:	export GIN_MODE=release
  - using code:	gin.SetMode(gin.ReleaseMode)
 
-[GIN-debug] GET    /test                     --> main.main.func1 (4 handlers)
-[GIN-debug] GET    /videos                   --> main.main.func2 (4 handlers)
-[GIN-debug] POST   /videos                   --> main.main.func3 (4 handlers)
+[GIN-debug] GET    /css/*filepath            --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (1 handlers)
+[GIN-debug] HEAD   /css/*filepath            --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (1 handlers)
+[GIN-debug] Loaded HTML Templates (4): 
+	- footer.html
+	- header.html
+	- index.html
+	- 
+
+[GIN-debug] GET    /api/test                 --> main.main.func1 (5 handlers)
+[GIN-debug] GET    /api/videos               --> main.main.func2 (5 handlers)
+[GIN-debug] POST   /api/videos               --> main.main.func3 (5 handlers)
+[GIN-debug] GET    /view/videos              --> iamsuteerth/golang-stuff/gin-pt/controllers.VideoController.ShowAll-fm (5 handlers)
 [GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
 Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
 [GIN-debug] Listening and serving HTTP on :8080
-::1 - [30 Jan 25 01:06 IST] | Method : GET | Path : /test | Status : 401 @6.083µs
-::1 - [30 Jan 25 01:06 IST] | Method : GET | Path : /test | Status : 200 @174.666µs
+::1 - [30 Jan 25 15:35 IST] | Method : GET | Path : /view/videos | Status : 200 @1.326ms
+::1 - [30 Jan 25 15:35 IST] | Method : POST | Path : /api/videos | Status : 200 @766.5µs
+::1 - [30 Jan 25 15:35 IST] | Method : GET | Path : /view/videos | Status : 200 @1.636791ms

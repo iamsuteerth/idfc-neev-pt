@@ -1,10 +1,11 @@
 package main
 
 import (
-	"iamsuteerth/golang-stuff/gin-pt/controller"
+	controller "iamsuteerth/golang-stuff/gin-pt/controllers"
 	"iamsuteerth/golang-stuff/gin-pt/middlewares"
 	"iamsuteerth/golang-stuff/gin-pt/service"
 	"io"
+	"net/http"
 	"os"
 
 	"github.com/gin-gonic/gin"
@@ -25,17 +26,39 @@ func main() {
 	// server := gin.Default()
 	setupLogOutput() // Logging to both stdout and the file in the path specified
 	server := gin.New()
+
+	server.Static("/css", "./templates/css")
+
+	server.LoadHTMLGlob("./templates/*.html")
+
 	server.Use(gin.Recovery(), middlewares.Logger(), middlewares.BasicAuth(), gindump.Dump())
-	server.GET("/test", func(context *gin.Context) {
-		context.JSON(200, gin.H{
-			"message": "Hello World!",
+
+	apiRoutes := server.Group("/api")
+	{
+		apiRoutes.GET("/test", func(context *gin.Context) {
+			context.JSON(200, gin.H{
+				"message": "Hello World!",
+			})
 		})
-	})
-	server.GET("/videos", func(context *gin.Context) {
-		context.JSON(200, videController.FindAll())
-	})
-	server.POST("/videos", func(context *gin.Context) {
-		context.JSON(201, videController.Save(context))
-	})
+		apiRoutes.GET("/videos", func(context *gin.Context) {
+			context.JSON(200, videController.FindAll())
+		})
+		apiRoutes.POST("/videos", func(context *gin.Context) {
+			err := videController.Save(context)
+			if err != nil {
+				context.JSON(http.StatusBadRequest, gin.H{
+					"error": err.Error(),
+				})
+			} else {
+				context.JSON(http.StatusOK, gin.H{
+					"message": "Video input is valid!",
+				})
+			}
+		})
+	}
+	viewRoutes := server.Group("/view")
+	{
+		viewRoutes.GET("/videos", videController.ShowAll)
+	}
 	server.Run(":8080")
 }
