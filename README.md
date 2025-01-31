@@ -5,3 +5,4 @@ Contains all the pre training content from dev bootcamp. Each content has it's o
 - [Docker Complete Guide](/docker-mastery/README.md)
 - [Golang Basics](/golang-stuff)
 - [Javascript and CSS](/js-css-stuff)
+- [Tic Tac Toe app in ReactJS](/tictactoe/)

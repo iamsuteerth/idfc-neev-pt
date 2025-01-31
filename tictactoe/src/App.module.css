@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+:root {
+  --color-primary: #1b486b;
+  --color-secondary: #28a352;
+  --color-tertiary: #b2db34;
+  --color-quaternary: #f2ac34;
+  --color-quinary: #fc7634;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.game {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+}
+
+.gameContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  gap: 40px;
+}
+
+.gameBoard {
+  flex-shrink: 0;
+}
+
+.gameInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.status {
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--color-tertiary);
+  margin-bottom: 20px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.resetButton {
+  background: var(--color-quinary);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.resetButton:hover {
+  background: var(--color-quaternary);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.resetButton:active {
+  transform: translateY(0);
+}
+
+.history {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 300px;
+}
+
+.historyButton {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  margin: 4px;
+  font-size: 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.historyButton:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.historyButton:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .gameContainer {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .gameBoard {
+    margin-bottom: 20px;
+  }
+
+  .status {
+    font-size: 24px;
+  }
+
+  .resetButton {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+
+  .historyButton {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+}
