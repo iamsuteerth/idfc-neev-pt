@@ -193,6 +193,31 @@ There are some commits to the master branch and now we have to rewind stuff. Thi
 - Say the code is working perfectly and a new feature has to be added.
 - Now let's say some people decided to make changes to the master branch directly.
 
+## Some More Commands
+- How to see the changes in code using CLI. By default the `commit_id` if not specified reverts to the last commit.
+    ```
+    git diff <commit_id>
+    ```
+    - What if the objective is to show the changes in what's staged?
+    ```
+    git diff --cached
+    git diff --cached <commit_id>
+    ```
+  
+- How to see what a commit did in terms of changes.
+    ```
+    git show <commit_id>
+    ```
+
+- How to view the log in raw format which includes which files were changed?
+    ```
+    git log --raw
+    ```
+    - For a specific commit
+    ```
+    git log --raw <commit_id>
+    ```
+
 # IDFC Neev Assignment - Git Basics
 
 ## SSH Setup
